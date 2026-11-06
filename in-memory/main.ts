@@ -1,7 +1,8 @@
 import { createMessage } from './message.ts';
 import type { ItemPedido } from './pedido.interface.ts';
 import type { Pedido } from './pedido.interface.ts';
-import { createChannel } from './channel.interface.ts';
+import { Channels } from './channels.ts';
+import { splitter } from './splitter.ts';
 
 const item: ItemPedido = {
     id: 'C_001',
@@ -18,9 +19,6 @@ const pedido: Pedido = {
 
 const message = createMessage({ payload: pedido });
 
-const channel = createChannel('novo_pedido');
-channel.subscribe((message) =>{
-    console.log('Recebendo mensagem: %o', JSON.parse(message.payload));
-});
+Channels.NEW_ORDER.subscribe(splitter);
 
-channel.send(message);
+Channels.NEW_ORDER.send(message);

@@ -1,7 +1,7 @@
 import type { Message } from './message.ts';
 import type { Pedido } from './pedido.interface.ts';
 import { createMessage } from './message.ts';
-import { createChannel } from './channel.interface.ts';
+import { Channels } from './channels.ts';
 
 export function splitter(message: Message) {
     const order: Pedido = JSON.parse(message.payload);
@@ -14,7 +14,8 @@ export function splitter(message: Message) {
                 orderId: order.id,
             }
         });
-        const channel = createChannel('new_order_item');
-        channel.send(newOrderItemMessage);
+        Channels.NEW_ORDER_ITEM.send(newOrderItemMessage);
     }
 }
+
+Channels.NEW_ORDER.subscribe(splitter);
