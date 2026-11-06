@@ -1,1 +1,1 @@
-console.log('Main Program');
+import './in-memory/main.ts';
