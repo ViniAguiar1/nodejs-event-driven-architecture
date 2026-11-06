@@ -3,6 +3,7 @@ import type { ItemPedido } from './pedido.interface.ts';
 import type { Pedido } from './pedido.interface.ts';
 import { Channels } from './channels.ts';
 import './splitter.ts';
+import './router.ts'
 
 const item: ItemPedido = {
     id: 'C_001',
@@ -12,8 +13,8 @@ const item: ItemPedido = {
 }
 
 const item2: ItemPedido = {
-    id: 'C_002',
-    nome: 'Mouse',
+    id: 'S_002',
+    nome: 'iPhone',
     quantidade: 1,
     precoUnitario: 100,
 }
