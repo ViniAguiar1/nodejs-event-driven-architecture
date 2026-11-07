@@ -8,10 +8,10 @@ const SYSTEM = '[INVENTORY(C)]';
 export async function inventoryCheck(message: Message) {
     const orderItem: ItemPedido = JSON.parse(message.payload)
 
-    console.debug(`[${SYSTEM}] - Checando inventário para o item:`, orderItem.nome)
+    console.debug(`${SYSTEM} - Checando inventário para o item:`, orderItem.nome)
 
     await waitRandomInMS(1000, 3000)
-    console.debug(`[${SYSTEM}] - item ${orderItem.nome} existe no inventário ✅`)
+    console.debug(`${SYSTEM} - item ${orderItem.nome} existe no inventário ✅`)
 }
 
 Channels.NEW_ORDER_ITEM_STOCK_COMPUTER.subscribe(inventoryCheck)
