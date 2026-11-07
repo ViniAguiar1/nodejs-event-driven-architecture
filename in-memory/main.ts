@@ -6,6 +6,7 @@ import './splitter.ts';
 import './router.ts'
 import './inventory-computer.ts'
 import './inventory-phone.ts'
+import './aggregator.ts'
 
 const item: ItemPedido = {
     id: 'C_001',

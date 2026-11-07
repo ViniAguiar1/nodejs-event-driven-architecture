@@ -12,6 +12,7 @@ export async function inventoryCheck(message: Message) {
 
     await waitRandomInMS(1000, 3000)
     console.debug(`${SYSTEM} - item ${orderItem.nome} existe no inventário ✅`)
+    Channels.STATUS_ORDER_ITEM.send(message)
 }
 
 Channels.NEW_ORDER_ITEM_STOCK_PHONE.subscribe(inventoryCheck)
