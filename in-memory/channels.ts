@@ -1,4 +1,3 @@
-import { STATUS_CODES } from 'http';
 import { createChannel } from './channel.interface.ts';
 
 export const Channels = Object.freeze({
